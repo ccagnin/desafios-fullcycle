@@ -4,13 +4,13 @@ WORKDIR /app
 
 COPY . .
 
-RUN go mod download
+RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 
-RUN go build -o main .
+FROM scratch
 
-FROM builder
+WORKDIR /app
 
-COPY --from=builder /app/main .
+COPY --from=builder /app/main /app/
 
 CMD ["./main"]
 
