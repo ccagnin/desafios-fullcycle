@@ -3,7 +3,7 @@
 ### Como executar a imagem
 
 ```bash
-docker run cax0000/fullcycle:latest
+docker run cax0000/fullcycle:2.0
 ```
 
 ### Image Docker Hub
